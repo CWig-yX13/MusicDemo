@@ -13,24 +13,13 @@
 /*!
  MusicModel初始化方法
  */
-- (instancetype)initWithMusicName:(NSString *)name MusciUrl:(NSString *)url LrcDict:(NSDictionary *)lrcDcit{
+- (instancetype __nonnull)initWithMusicName:(NSString * __nonnull)musicName MusicFileName:(NSString * __nonnull)fileName LrcDict:(NSDictionary * __nonnull)lrcDcit{
     if (self = [super init]) {
-        _musicName = name;
-        _musicUrl = url;
+        _musicName = musicName;
+        //根据音乐文件名获取文件路径
+        _musicUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:fileName ofType:nil]];
         _lrcDict = lrcDcit;
-        NSMutableArray *timesArr = lrcDcit.allKeys.mutableCopy;
-        [timesArr sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-            float num1 = [obj1 floatValue];
-            float num2 = [obj2 floatValue];
-            if (num1 > num2) {
-                return NSOrderedDescending;
-            }else if (num1 == num2){
-                return NSOrderedSame;
-            }else{
-                return NSOrderedAscending;
-            }
-        }];
-        _lrcTimesArr = timesArr;
+        _lrcTimesArr = [self getLrcSortTimesArrWithLrcDict:_lrcDict];
     }
     return self;
 }
@@ -38,7 +27,27 @@
 /*!
  歌词转字典
  */
-+ (NSDictionary *)getLrcDictWithMusciLrcFileName:(NSString *)fileName{
+- (NSArray *)getLrcSortTimesArrWithLrcDict:(NSDictionary *)lrcDict{
+    //根据歌词字典,获取排序后的歌词时间表
+    NSMutableArray *timesArr = lrcDict.allKeys.mutableCopy;
+    [timesArr sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        float num1 = [obj1 floatValue];
+        float num2 = [obj2 floatValue];
+        if (num1 > num2) {
+            return NSOrderedDescending;
+        }else if (num1 == num2){
+            return NSOrderedSame;
+        }else{
+            return NSOrderedAscending;
+        }
+    }];
+    return timesArr;
+}
+
+/*!
+ 歌词转字典
+ */
++ (NSDictionary * __nonnull)getLrcDictWithMusciLrcFileName:(NSString * __nonnull)fileName{
     //根据文件路径,获取歌词
     NSString *lrcStr = [NSString stringWithContentsOfFile:[[NSBundle mainBundle]pathForResource:fileName ofType:nil] encoding:NSUTF8StringEncoding error:nil];
     //创建字典保存一段段歌词
@@ -61,10 +70,15 @@
             //转化为字符串格式
             NSString *time = [NSString stringWithFormat:@"%.2f",second];
             //将这段歌词添加到歌词字典
-            [lrcDict setObject:lrcStr forKey:time];
+            [lrcDict setObject:lrc forKey:time];
         }
     }
-    return nil;
+    return lrcDict;
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@,%@,%@,%@", self.musicName,self.musicUrl,self.lrcDict,self.lrcTimesArr];
 }
 
 @end

@@ -20,6 +20,8 @@
 		7510664C1CB89502005BFE08 /* 梁静茹-偶阵雨.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 751066461CB89502005BFE08 /* 梁静茹-偶阵雨.mp3 */; };
 		7510664F1CB89643005BFE08 /* MusicListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7510664E1CB89643005BFE08 /* MusicListTableViewController.m */; };
 		751066521CB89663005BFE08 /* MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 751066511CB89663005BFE08 /* MusicModel.m */; };
+		751066581CB8A42F005BFE08 /* NSArray+PrintChinese.m in Sources */ = {isa = PBXBuildFile; fileRef = 751066551CB8A42F005BFE08 /* NSArray+PrintChinese.m */; };
+		751066591CB8A42F005BFE08 /* NSDictionary+PrintChinese.m in Sources */ = {isa = PBXBuildFile; fileRef = 751066571CB8A42F005BFE08 /* NSDictionary+PrintChinese.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,10 @@
 		7510664E1CB89643005BFE08 /* MusicListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicListTableViewController.m; sourceTree = "<group>"; };
 		751066501CB89663005BFE08 /* MusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicModel.h; sourceTree = "<group>"; };
 		751066511CB89663005BFE08 /* MusicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicModel.m; sourceTree = "<group>"; };
+		751066541CB8A42F005BFE08 /* NSArray+PrintChinese.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PrintChinese.h"; sourceTree = "<group>"; };
+		751066551CB8A42F005BFE08 /* NSArray+PrintChinese.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PrintChinese.m"; sourceTree = "<group>"; };
+		751066561CB8A42F005BFE08 /* NSDictionary+PrintChinese.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+PrintChinese.h"; sourceTree = "<group>"; };
+		751066571CB8A42F005BFE08 /* NSDictionary+PrintChinese.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+PrintChinese.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,7 @@
 		751066281CB89327005BFE08 /* MusicDemo */ = {
 			isa = PBXGroup;
 			children = (
+				751066531CB8A42F005BFE08 /* 数组字典打印中文 */,
 				751066401CB89502005BFE08 /* 音乐 */,
 				7510662C1CB89327005BFE08 /* AppDelegate.h */,
 				7510662D1CB89327005BFE08 /* AppDelegate.m */,
@@ -108,6 +115,17 @@
 				751066461CB89502005BFE08 /* 梁静茹-偶阵雨.mp3 */,
 			);
 			path = "音乐";
+			sourceTree = "<group>";
+		};
+		751066531CB8A42F005BFE08 /* 数组字典打印中文 */ = {
+			isa = PBXGroup;
+			children = (
+				751066541CB8A42F005BFE08 /* NSArray+PrintChinese.h */,
+				751066551CB8A42F005BFE08 /* NSArray+PrintChinese.m */,
+				751066561CB8A42F005BFE08 /* NSDictionary+PrintChinese.h */,
+				751066571CB8A42F005BFE08 /* NSDictionary+PrintChinese.m */,
+			);
+			path = "数组字典打印中文";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +208,8 @@
 				7510662E1CB89327005BFE08 /* AppDelegate.m in Sources */,
 				751066521CB89663005BFE08 /* MusicModel.m in Sources */,
 				7510662B1CB89327005BFE08 /* main.m in Sources */,
+				751066581CB8A42F005BFE08 /* NSArray+PrintChinese.m in Sources */,
+				751066591CB8A42F005BFE08 /* NSDictionary+PrintChinese.m in Sources */,
 				7510664F1CB89643005BFE08 /* MusicListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

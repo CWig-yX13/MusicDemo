@@ -13,27 +13,27 @@
 /*!
  歌名
  */
-@property (nonnull,strong) NSString *musicName;
+@property (nonatomic,nonnull,strong) NSString *musicName;
 
 /*!
  音频文件的路径
  */
-@property (nonnull,strong) NSString *musicUrl;
+@property (nonatomic,nonnull,strong) NSURL *musicUrl;
 
 /*!
  歌词
  */
-@property (nonnull,strong) NSDictionary *lrcDict;
+@property (nonatomic,nonnull,strong) NSDictionary *lrcDict;
 
 /*!
  歌词时间表(排序后)
  */
-@property (nonnull,strong) NSArray *lrcTimesArr;
+@property (nonatomic,nonnull,strong) NSArray *lrcTimesArr;
 
 /*!
  MusicModel初始化方法
  */
-- (instancetype __nonnull)initWithMusicName:(NSString * __nonnull)name MusciUrl:(NSString * __nonnull)url LrcDict:(NSDictionary * __nonnull)lrcDcit;
+- (instancetype __nonnull)initWithMusicName:(NSString * __nonnull)musicName MusicFileName:(NSString * __nonnull)fileName LrcDict:(NSDictionary * __nonnull)lrcDcit;
 
 /*!
  歌词转字典

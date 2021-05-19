@@ -7,43 +7,62 @@
 //
 
 #import "MusicListTableViewController.h"
+#import "MusicModel.h"
 
 @interface MusicListTableViewController ()
+
+/*!
+ 保存音乐的数组
+ */
+@property (nonatomic,strong,nonnull) NSMutableArray *musicArray;
 
 @end
 
 @implementation MusicListTableViewController
 
+/*!
+ 音乐数组懒加载
+ */
+- (NSMutableArray *)musicArray{
+    if (_musicArray == nil) {
+        _musicArray = [NSMutableArray array];
+    }
+    return _musicArray;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    //创建音乐,并添加到音乐数组
+    MusicModel *music1 = [[MusicModel alloc]initWithMusicName:@"情非得已" MusicFileName:@"情非得已.mp3" LrcDict:[MusicModel getLrcDictWithMusciLrcFileName:@"情非得已.lrc"]];
+//    NSLog(@"%@",music1);
+    MusicModel *musci2 = [[MusicModel alloc]initWithMusicName:@"背对背拥抱" MusicFileName:@"林俊杰-背对背拥抱.mp3" LrcDict:[MusicModel getLrcDictWithMusciLrcFileName:@"林俊杰-背对背拥抱.lrc"]];
+    MusicModel *music3 = [[MusicModel alloc] initWithMusicName:@"偶阵雨" MusicFileName:@"梁静茹-偶阵雨.mp3" LrcDict:[MusicModel getLrcDictWithMusciLrcFileName:@"梁静茹-偶阵雨.lrc"]];
+    [self.musicArray addObjectsFromArray:@[music1,musci2,music3]];
 }
 
+//内存警告
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
+//区数
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+    return 1;
 }
 
+//行数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.musicArray.count;
 }
 
-/*
+//Cell,每行显示的内容
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MusicNameCell" forIndexPath:indexPath];
+    MusicModel *music = self.musicArray[indexPath.row];
+    cell.textLabel.text = music.musicName;
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
