@@ -33,11 +33,6 @@
 /*!
  MusicModel初始化方法
  */
-- (instancetype __nonnull)initWithMusicName:(NSString * __nonnull)musicName MusicFileName:(NSString * __nonnull)fileName LrcDict:(NSDictionary * __nonnull)lrcDcit;
-
-/*!
- 歌词转字典
- */
-+ (NSDictionary * __nonnull)getLrcDictWithMusciLrcFileName:(NSString * __nonnull)fileName;
+- (instancetype __nonnull)initWithMusicName:(NSString * __nonnull)musicName MusicFileName:(NSString * __nonnull)musicFileName LrcFileName:(NSString * __nonnull)lrcFileName;
 
 @end

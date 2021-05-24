@@ -34,10 +34,10 @@
     [super viewDidLoad];
     
     //创建音乐,并添加到音乐数组
-    MusicModel *music1 = [[MusicModel alloc]initWithMusicName:@"情非得已" MusicFileName:@"情非得已.mp3" LrcDict:[MusicModel getLrcDictWithMusciLrcFileName:@"情非得已.lrc"]];
+    MusicModel *music1 = [[MusicModel alloc]initWithMusicName:@"情非得已" MusicFileName:@"情非得已.mp3" LrcFileName:@"情非得已.lrc"];
 //    NSLog(@"%@",music1);
-    MusicModel *musci2 = [[MusicModel alloc]initWithMusicName:@"背对背拥抱" MusicFileName:@"林俊杰-背对背拥抱.mp3" LrcDict:[MusicModel getLrcDictWithMusciLrcFileName:@"林俊杰-背对背拥抱.lrc"]];
-    MusicModel *music3 = [[MusicModel alloc] initWithMusicName:@"偶阵雨" MusicFileName:@"梁静茹-偶阵雨.mp3" LrcDict:[MusicModel getLrcDictWithMusciLrcFileName:@"梁静茹-偶阵雨.lrc"]];
+    MusicModel *musci2 = [[MusicModel alloc]initWithMusicName:@"背对背拥抱" MusicFileName:@"背对背拥抱.mp3" LrcFileName:@"背对背拥抱.lrc"];
+    MusicModel *music3 = [[MusicModel alloc] initWithMusicName:@"偶阵雨" MusicFileName:@"偶阵雨.mp3" LrcFileName:@"偶阵雨.lrc"];
     [self.musicArray addObjectsFromArray:@[music1,musci2,music3]];
 }
 

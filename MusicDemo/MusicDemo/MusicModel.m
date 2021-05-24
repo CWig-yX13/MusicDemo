@@ -13,22 +13,23 @@
 /*!
  MusicModel初始化方法
  */
-- (instancetype __nonnull)initWithMusicName:(NSString * __nonnull)musicName MusicFileName:(NSString * __nonnull)fileName LrcDict:(NSDictionary * __nonnull)lrcDcit{
+- (instancetype __nonnull)initWithMusicName:(NSString * __nonnull)musicName MusicFileName:(NSString * __nonnull)musicFileName LrcFileName:(NSString * __nonnull)lrcFileName{
     if (self = [super init]) {
         _musicName = musicName;
         //根据音乐文件名获取文件路径
-        _musicUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:fileName ofType:nil]];
-        _lrcDict = lrcDcit;
+        _musicUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:musicFileName ofType:nil]];
+        //调用方法,根据歌词文件名,获取歌词字典
+        _lrcDict = [self getLrcDictWithMusciLrcFileName:lrcFileName];
+        //调用方法,根据歌词字典获取排序后的歌词时间表
         _lrcTimesArr = [self getLrcSortTimesArrWithLrcDict:_lrcDict];
     }
     return self;
 }
 
 /*!
- 歌词转字典
+通过字典获取排序后的歌词时间表
  */
 - (NSArray *)getLrcSortTimesArrWithLrcDict:(NSDictionary *)lrcDict{
-    //根据歌词字典,获取排序后的歌词时间表
     NSMutableArray *timesArr = lrcDict.allKeys.mutableCopy;
     [timesArr sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
         float num1 = [obj1 floatValue];
@@ -47,7 +48,7 @@
 /*!
  歌词转字典
  */
-+ (NSDictionary * __nonnull)getLrcDictWithMusciLrcFileName:(NSString * __nonnull)fileName{
+- (NSDictionary * __nonnull)getLrcDictWithMusciLrcFileName:(NSString * __nonnull)fileName{
     //根据文件路径,获取歌词
     NSString *lrcStr = [NSString stringWithContentsOfFile:[[NSBundle mainBundle]pathForResource:fileName ofType:nil] encoding:NSUTF8StringEncoding error:nil];
     //创建字典保存一段段歌词

@@ -14,10 +14,10 @@
 		751066391CB89327005BFE08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 751066371CB89327005BFE08 /* LaunchScreen.storyboard */; };
 		751066471CB89502005BFE08 /* 情非得已.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 751066411CB89502005BFE08 /* 情非得已.lrc */; };
 		751066481CB89502005BFE08 /* 情非得已.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 751066421CB89502005BFE08 /* 情非得已.mp3 */; };
-		751066491CB89502005BFE08 /* 林俊杰-背对背拥抱.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 751066431CB89502005BFE08 /* 林俊杰-背对背拥抱.lrc */; };
-		7510664A1CB89502005BFE08 /* 林俊杰-背对背拥抱.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 751066441CB89502005BFE08 /* 林俊杰-背对背拥抱.mp3 */; };
-		7510664B1CB89502005BFE08 /* 梁静茹-偶阵雨.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 751066451CB89502005BFE08 /* 梁静茹-偶阵雨.lrc */; };
-		7510664C1CB89502005BFE08 /* 梁静茹-偶阵雨.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 751066461CB89502005BFE08 /* 梁静茹-偶阵雨.mp3 */; };
+		751066491CB89502005BFE08 /* 背对背拥抱.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 751066431CB89502005BFE08 /* 背对背拥抱.lrc */; };
+		7510664A1CB89502005BFE08 /* 背对背拥抱.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 751066441CB89502005BFE08 /* 背对背拥抱.mp3 */; };
+		7510664B1CB89502005BFE08 /* 偶阵雨.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 751066451CB89502005BFE08 /* 偶阵雨.lrc */; };
+		7510664C1CB89502005BFE08 /* 偶阵雨.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 751066461CB89502005BFE08 /* 偶阵雨.mp3 */; };
 		7510664F1CB89643005BFE08 /* MusicListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7510664E1CB89643005BFE08 /* MusicListTableViewController.m */; };
 		751066521CB89663005BFE08 /* MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 751066511CB89663005BFE08 /* MusicModel.m */; };
 		751066581CB8A42F005BFE08 /* NSArray+PrintChinese.m in Sources */ = {isa = PBXBuildFile; fileRef = 751066551CB8A42F005BFE08 /* NSArray+PrintChinese.m */; };
@@ -35,10 +35,10 @@
 		7510663A1CB89327005BFE08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		751066411CB89502005BFE08 /* 情非得已.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "情非得已.lrc"; sourceTree = "<group>"; };
 		751066421CB89502005BFE08 /* 情非得已.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "情非得已.mp3"; sourceTree = "<group>"; };
-		751066431CB89502005BFE08 /* 林俊杰-背对背拥抱.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "林俊杰-背对背拥抱.lrc"; sourceTree = "<group>"; };
-		751066441CB89502005BFE08 /* 林俊杰-背对背拥抱.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "林俊杰-背对背拥抱.mp3"; sourceTree = "<group>"; };
-		751066451CB89502005BFE08 /* 梁静茹-偶阵雨.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "梁静茹-偶阵雨.lrc"; sourceTree = "<group>"; };
-		751066461CB89502005BFE08 /* 梁静茹-偶阵雨.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "梁静茹-偶阵雨.mp3"; sourceTree = "<group>"; };
+		751066431CB89502005BFE08 /* 背对背拥抱.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "背对背拥抱.lrc"; sourceTree = "<group>"; };
+		751066441CB89502005BFE08 /* 背对背拥抱.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "背对背拥抱.mp3"; sourceTree = "<group>"; };
+		751066451CB89502005BFE08 /* 偶阵雨.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "偶阵雨.lrc"; sourceTree = "<group>"; };
+		751066461CB89502005BFE08 /* 偶阵雨.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "偶阵雨.mp3"; sourceTree = "<group>"; };
 		7510664D1CB89643005BFE08 /* MusicListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicListTableViewController.h; sourceTree = "<group>"; };
 		7510664E1CB89643005BFE08 /* MusicListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicListTableViewController.m; sourceTree = "<group>"; };
 		751066501CB89663005BFE08 /* MusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicModel.h; sourceTree = "<group>"; };
@@ -109,10 +109,10 @@
 			children = (
 				751066411CB89502005BFE08 /* 情非得已.lrc */,
 				751066421CB89502005BFE08 /* 情非得已.mp3 */,
-				751066431CB89502005BFE08 /* 林俊杰-背对背拥抱.lrc */,
-				751066441CB89502005BFE08 /* 林俊杰-背对背拥抱.mp3 */,
-				751066451CB89502005BFE08 /* 梁静茹-偶阵雨.lrc */,
-				751066461CB89502005BFE08 /* 梁静茹-偶阵雨.mp3 */,
+				751066431CB89502005BFE08 /* 背对背拥抱.lrc */,
+				751066441CB89502005BFE08 /* 背对背拥抱.mp3 */,
+				751066451CB89502005BFE08 /* 偶阵雨.lrc */,
+				751066461CB89502005BFE08 /* 偶阵雨.mp3 */,
 			);
 			path = "音乐";
 			sourceTree = "<group>";
@@ -189,12 +189,12 @@
 				751066391CB89327005BFE08 /* LaunchScreen.storyboard in Resources */,
 				751066361CB89327005BFE08 /* Assets.xcassets in Resources */,
 				751066481CB89502005BFE08 /* 情非得已.mp3 in Resources */,
-				751066491CB89502005BFE08 /* 林俊杰-背对背拥抱.lrc in Resources */,
+				751066491CB89502005BFE08 /* 背对背拥抱.lrc in Resources */,
 				751066341CB89327005BFE08 /* Main.storyboard in Resources */,
-				7510664C1CB89502005BFE08 /* 梁静茹-偶阵雨.mp3 in Resources */,
-				7510664B1CB89502005BFE08 /* 梁静茹-偶阵雨.lrc in Resources */,
+				7510664C1CB89502005BFE08 /* 偶阵雨.mp3 in Resources */,
+				7510664B1CB89502005BFE08 /* 偶阵雨.lrc in Resources */,
 				751066471CB89502005BFE08 /* 情非得已.lrc in Resources */,
-				7510664A1CB89502005BFE08 /* 林俊杰-背对背拥抱.mp3 in Resources */,
+				7510664A1CB89502005BFE08 /* 背对背拥抱.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
