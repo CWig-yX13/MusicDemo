@@ -22,6 +22,20 @@
 		751066521CB89663005BFE08 /* MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 751066511CB89663005BFE08 /* MusicModel.m */; };
 		751066581CB8A42F005BFE08 /* NSArray+PrintChinese.m in Sources */ = {isa = PBXBuildFile; fileRef = 751066551CB8A42F005BFE08 /* NSArray+PrintChinese.m */; };
 		751066591CB8A42F005BFE08 /* NSDictionary+PrintChinese.m in Sources */ = {isa = PBXBuildFile; fileRef = 751066571CB8A42F005BFE08 /* NSDictionary+PrintChinese.m */; };
+		751066671CB8A87A005BFE08 /* aboveMusic.png in Resources */ = {isa = PBXBuildFile; fileRef = 7510665B1CB8A87A005BFE08 /* aboveMusic.png */; };
+		751066681CB8A87A005BFE08 /* backgroundImage5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7510665C1CB8A87A005BFE08 /* backgroundImage5.jpg */; };
+		751066691CB8A87A005BFE08 /* circleClose.png in Resources */ = {isa = PBXBuildFile; fileRef = 7510665D1CB8A87A005BFE08 /* circleClose.png */; };
+		7510666A1CB8A87A005BFE08 /* circleOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = 7510665E1CB8A87A005BFE08 /* circleOpen.png */; };
+		7510666B1CB8A87A005BFE08 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7510665F1CB8A87A005BFE08 /* menu.png */; };
+		7510666C1CB8A87A005BFE08 /* nextMusic.png in Resources */ = {isa = PBXBuildFile; fileRef = 751066601CB8A87A005BFE08 /* nextMusic.png */; };
+		7510666D1CB8A87A005BFE08 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 751066611CB8A87A005BFE08 /* pause.png */; };
+		7510666E1CB8A87A005BFE08 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 751066621CB8A87A005BFE08 /* play.png */; };
+		7510666F1CB8A87A005BFE08 /* randomClose.png in Resources */ = {isa = PBXBuildFile; fileRef = 751066631CB8A87A005BFE08 /* randomClose.png */; };
+		751066701CB8A87A005BFE08 /* randomOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = 751066641CB8A87A005BFE08 /* randomOpen.png */; };
+		751066711CB8A87A005BFE08 /* sliderThumb_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 751066651CB8A87A005BFE08 /* sliderThumb_small.png */; };
+		751066721CB8A87A005BFE08 /* soundSlider.png in Resources */ = {isa = PBXBuildFile; fileRef = 751066661CB8A87A005BFE08 /* soundSlider.png */; };
+		751066781CB8AE8D005BFE08 /* MusicPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751066771CB8AE8D005BFE08 /* MusicPlayerViewController.m */; };
+		7510667B1CB8AF5B005BFE08 /* MusicLrcTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7510667A1CB8AF5B005BFE08 /* MusicLrcTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +61,22 @@
 		751066551CB8A42F005BFE08 /* NSArray+PrintChinese.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PrintChinese.m"; sourceTree = "<group>"; };
 		751066561CB8A42F005BFE08 /* NSDictionary+PrintChinese.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+PrintChinese.h"; sourceTree = "<group>"; };
 		751066571CB8A42F005BFE08 /* NSDictionary+PrintChinese.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+PrintChinese.m"; sourceTree = "<group>"; };
+		7510665B1CB8A87A005BFE08 /* aboveMusic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aboveMusic.png; sourceTree = "<group>"; };
+		7510665C1CB8A87A005BFE08 /* backgroundImage5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundImage5.jpg; sourceTree = "<group>"; };
+		7510665D1CB8A87A005BFE08 /* circleClose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circleClose.png; sourceTree = "<group>"; };
+		7510665E1CB8A87A005BFE08 /* circleOpen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circleOpen.png; sourceTree = "<group>"; };
+		7510665F1CB8A87A005BFE08 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		751066601CB8A87A005BFE08 /* nextMusic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nextMusic.png; sourceTree = "<group>"; };
+		751066611CB8A87A005BFE08 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		751066621CB8A87A005BFE08 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		751066631CB8A87A005BFE08 /* randomClose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = randomClose.png; sourceTree = "<group>"; };
+		751066641CB8A87A005BFE08 /* randomOpen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = randomOpen.png; sourceTree = "<group>"; };
+		751066651CB8A87A005BFE08 /* sliderThumb_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sliderThumb_small.png; sourceTree = "<group>"; };
+		751066661CB8A87A005BFE08 /* soundSlider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soundSlider.png; sourceTree = "<group>"; };
+		751066761CB8AE8D005BFE08 /* MusicPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicPlayerViewController.h; sourceTree = "<group>"; };
+		751066771CB8AE8D005BFE08 /* MusicPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicPlayerViewController.m; sourceTree = "<group>"; };
+		751066791CB8AF5B005BFE08 /* MusicLrcTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicLrcTableViewCell.h; sourceTree = "<group>"; };
+		7510667A1CB8AF5B005BFE08 /* MusicLrcTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicLrcTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +109,7 @@
 		751066281CB89327005BFE08 /* MusicDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7510665A1CB8A87A005BFE08 /* image */,
 				751066531CB8A42F005BFE08 /* 数组字典打印中文 */,
 				751066401CB89502005BFE08 /* 音乐 */,
 				7510662C1CB89327005BFE08 /* AppDelegate.h */,
@@ -87,6 +118,10 @@
 				751066511CB89663005BFE08 /* MusicModel.m */,
 				7510664D1CB89643005BFE08 /* MusicListTableViewController.h */,
 				7510664E1CB89643005BFE08 /* MusicListTableViewController.m */,
+				751066761CB8AE8D005BFE08 /* MusicPlayerViewController.h */,
+				751066771CB8AE8D005BFE08 /* MusicPlayerViewController.m */,
+				751066791CB8AF5B005BFE08 /* MusicLrcTableViewCell.h */,
+				7510667A1CB8AF5B005BFE08 /* MusicLrcTableViewCell.m */,
 				751066321CB89327005BFE08 /* Main.storyboard */,
 				751066351CB89327005BFE08 /* Assets.xcassets */,
 				751066371CB89327005BFE08 /* LaunchScreen.storyboard */,
@@ -126,6 +161,25 @@
 				751066571CB8A42F005BFE08 /* NSDictionary+PrintChinese.m */,
 			);
 			path = "数组字典打印中文";
+			sourceTree = "<group>";
+		};
+		7510665A1CB8A87A005BFE08 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				7510665B1CB8A87A005BFE08 /* aboveMusic.png */,
+				7510665C1CB8A87A005BFE08 /* backgroundImage5.jpg */,
+				7510665D1CB8A87A005BFE08 /* circleClose.png */,
+				7510665E1CB8A87A005BFE08 /* circleOpen.png */,
+				7510665F1CB8A87A005BFE08 /* menu.png */,
+				751066601CB8A87A005BFE08 /* nextMusic.png */,
+				751066611CB8A87A005BFE08 /* pause.png */,
+				751066621CB8A87A005BFE08 /* play.png */,
+				751066631CB8A87A005BFE08 /* randomClose.png */,
+				751066641CB8A87A005BFE08 /* randomOpen.png */,
+				751066651CB8A87A005BFE08 /* sliderThumb_small.png */,
+				751066661CB8A87A005BFE08 /* soundSlider.png */,
+			);
+			path = image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,14 +240,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				751066681CB8A87A005BFE08 /* backgroundImage5.jpg in Resources */,
+				7510666E1CB8A87A005BFE08 /* play.png in Resources */,
 				751066391CB89327005BFE08 /* LaunchScreen.storyboard in Resources */,
 				751066361CB89327005BFE08 /* Assets.xcassets in Resources */,
 				751066481CB89502005BFE08 /* 情非得已.mp3 in Resources */,
+				7510666B1CB8A87A005BFE08 /* menu.png in Resources */,
 				751066491CB89502005BFE08 /* 背对背拥抱.lrc in Resources */,
 				751066341CB89327005BFE08 /* Main.storyboard in Resources */,
+				7510666C1CB8A87A005BFE08 /* nextMusic.png in Resources */,
+				751066671CB8A87A005BFE08 /* aboveMusic.png in Resources */,
+				751066721CB8A87A005BFE08 /* soundSlider.png in Resources */,
 				7510664C1CB89502005BFE08 /* 偶阵雨.mp3 in Resources */,
+				751066711CB8A87A005BFE08 /* sliderThumb_small.png in Resources */,
+				7510666F1CB8A87A005BFE08 /* randomClose.png in Resources */,
+				7510666D1CB8A87A005BFE08 /* pause.png in Resources */,
+				7510666A1CB8A87A005BFE08 /* circleOpen.png in Resources */,
 				7510664B1CB89502005BFE08 /* 偶阵雨.lrc in Resources */,
 				751066471CB89502005BFE08 /* 情非得已.lrc in Resources */,
+				751066701CB8A87A005BFE08 /* randomOpen.png in Resources */,
+				751066691CB8A87A005BFE08 /* circleClose.png in Resources */,
 				7510664A1CB89502005BFE08 /* 背对背拥抱.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,12 +271,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				751066781CB8AE8D005BFE08 /* MusicPlayerViewController.m in Sources */,
 				7510662E1CB89327005BFE08 /* AppDelegate.m in Sources */,
 				751066521CB89663005BFE08 /* MusicModel.m in Sources */,
 				7510662B1CB89327005BFE08 /* main.m in Sources */,
 				751066581CB8A42F005BFE08 /* NSArray+PrintChinese.m in Sources */,
 				751066591CB8A42F005BFE08 /* NSDictionary+PrintChinese.m in Sources */,
 				7510664F1CB89643005BFE08 /* MusicListTableViewController.m in Sources */,
+				7510667B1CB8AF5B005BFE08 /* MusicLrcTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
