@@ -13,4 +13,6 @@
 
 @property (nonatomic,strong) MusicModel *music;
 
+@property (nonatomic,assign) BOOL isSame;
+
 @end

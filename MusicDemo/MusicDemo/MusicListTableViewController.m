@@ -65,10 +65,20 @@
     return cell;
 }
 
+static NSString *musicName = nil;
+
 //跳转时传输数据
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     MusicPlayerViewController *musicPlayerVC = segue.destinationViewController;
-    musicPlayerVC.music = self.musicArray[self.tableView.indexPathForSelectedRow.row];
+    NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+    MusicModel *music = self.musicArray[indexPath.row];
+    if ([musicName isEqualToString:music.musicName]) {
+        musicPlayerVC.isSame = YES;
+    }else{
+        musicPlayerVC.isSame = NO;
+    }
+    musicName = music.musicName;
+    musicPlayerVC.music = self.musicArray[indexPath.row];
 }
 
 @end
