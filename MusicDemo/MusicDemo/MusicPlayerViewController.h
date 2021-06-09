@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MusicModel.h"
 
 @interface MusicPlayerViewController : UIViewController
 
-@property (nonatomic,strong) MusicModel *music;
+@property (nonatomic,strong,nonnull) NSArray *musicArray;
+
+@property (nonatomic,assign) NSInteger index;
 
 @property (nonatomic,assign) BOOL isSame;
+
+@property (nonatomic,copy) void(^ __nonnull MusicNameChangeBlock)(NSString *__nonnull musicName);
 
 @end

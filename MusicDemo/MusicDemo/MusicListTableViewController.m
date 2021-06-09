@@ -17,6 +17,8 @@
  */
 @property (nonatomic,strong,nonnull) NSMutableArray *musicArray;
 
+@property (nonatomic,strong) NSString *musicName;
+
 @end
 
 @implementation MusicListTableViewController
@@ -33,6 +35,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.musicName = nil;
     
     //创建音乐,并添加到音乐数组
     MusicModel *music1 = [[MusicModel alloc]initWithMusicName:@"情非得已" MusicFileName:@"情非得已.mp3" LrcFileName:@"情非得已.lrc"];
@@ -65,20 +69,24 @@
     return cell;
 }
 
-static NSString *musicName = nil;
-
 //跳转时传输数据
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     MusicPlayerViewController *musicPlayerVC = segue.destinationViewController;
     NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+    //判断是够跟上次打开的是相同的歌曲
     MusicModel *music = self.musicArray[indexPath.row];
-    if ([musicName isEqualToString:music.musicName]) {
+    if ([self.musicName isEqualToString:music.musicName]) {
         musicPlayerVC.isSame = YES;
     }else{
         musicPlayerVC.isSame = NO;
     }
-    musicName = music.musicName;
-    musicPlayerVC.music = self.musicArray[indexPath.row];
+    self.musicName = music.musicName;
+    musicPlayerVC.musicArray = self.musicArray;
+    musicPlayerVC.index = indexPath.row;
+    musicPlayerVC.MusicNameChangeBlock = ^(NSString *name){
+        self.musicName = name;
+        NSLog(@"%@",name);
+    };
 }
 
 @end

@@ -78,7 +78,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="nextMusic.png"/>
                                 <connections>
-                                    <action selector="playOrStopAction:" destination="jBY-wo-Ooq" eventType="touchUpInside" id="DCT-wZ-Tk8"/>
+                                    <action selector="nextAction:" destination="jBY-wo-Ooq" eventType="touchUpInside" id="cqF-Ms-KUY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xha-9R-8Ri">
@@ -89,7 +89,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="play.png"/>
                                 <connections>
-                                    <action selector="nextAction:" destination="jBY-wo-Ooq" eventType="touchUpInside" id="Fuo-Kj-FlX"/>
+                                    <action selector="playOrStopAction:" destination="jBY-wo-Ooq" eventType="touchUpInside" id="rOc-PL-kTs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15b-GO-kyX">
@@ -203,6 +203,9 @@
                     <connections>
                         <outlet property="allTimeLable" destination="ZbZ-gf-u4q" id="U79-mf-QZh"/>
                         <outlet property="alreadyTimeLable" destination="UmC-lj-ois" id="D0Y-vg-eeN"/>
+                        <outlet property="backButton" destination="15b-GO-kyX" id="NYM-sf-Vxf"/>
+                        <outlet property="nextButton" destination="Z3h-87-Y0H" id="Q3l-71-eWc"/>
+                        <outlet property="playOrStopButton" destination="xha-9R-8Ri" id="3pL-hf-93u"/>
                         <outlet property="scheduleSlider" destination="8aa-Db-Q8K" id="nKe-Qn-QIQ"/>
                         <outlet property="tableView" destination="4g3-Dw-4mG" id="bFg-wj-cEV"/>
                         <outlet property="volumeSlider" destination="KcC-M9-lp7" id="GXA-a3-baJ"/>

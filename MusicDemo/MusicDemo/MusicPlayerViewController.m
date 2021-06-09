@@ -7,6 +7,7 @@
 //
 
 #import "MusicPlayerViewController.h"
+#import "MusicModel.h"
 #import "MusicLrcTableViewCell.h"
 #import "AudioPlayer.h"
 #import <AVFoundation/AVFoundation.h>
@@ -43,6 +44,21 @@
  */
 @property (nonatomic,strong) NSDictionary *lrcDict;
 
+/*!
+ 播放暂停按钮
+ */
+@property (weak, nonatomic) IBOutlet UIButton *playOrStopButton;
+
+/*!
+上一曲按钮
+ */
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+
+/*!
+下一曲按钮
+ */
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
+
 @end
 
 @implementation MusicPlayerViewController
@@ -51,32 +67,62 @@
  歌词字典懒加载
  */
 - (NSDictionary *)lrcDict{
-    if (_lrcDict == nil) {
-        _lrcDict = self.music.lrcDict;
-    }
+    _lrcDict = [self.musicArray[self.index] lrcDict];
     return _lrcDict;
 }
 
 //播放暂停
 - (IBAction)playOrStopAction:(UIButton *)sender {
-    
+    if ([AudioPlayer shareInstace].audioPlayer.isPlaying) {
+        [[AudioPlayer shareInstace].audioPlayer pause];
+        [sender setBackgroundImage:[UIImage imageNamed:@"play.png"] forState:(UIControlStateNormal)];
+    }else{
+        [[AudioPlayer shareInstace].audioPlayer play];
+        [sender setBackgroundImage:[UIImage imageNamed:@"pause.png"] forState:(UIControlStateNormal)];
+    }
 }
 
 //上一曲
 - (IBAction)backAction:(UIButton *)sender {
-    
+    self.nextButton.userInteractionEnabled = YES;
+    self.index--;
+    if (self.index == 0) {
+        sender.userInteractionEnabled = NO;
+    }
+    MusicModel *music = self.musicArray[self.index];
+    //播放音乐
+    [self musicPlayWithMusicUrl:music.musicUrl];
+    //更新播放列表页的音乐名
+    self.MusicNameChangeBlock(music.musicName);
+    //更新播放器页面的标题
+    self.navigationItem.title = music.musicName;
+    //更新歌词
+    [self.tableView reloadData];
 }
 
 //下一曲
 - (IBAction)nextAction:(UIButton *)sender {
-    
+    self.backButton.userInteractionEnabled = YES;
+    self.index++;
+    if (self.index == self.musicArray.count - 1) {
+        sender.userInteractionEnabled = NO;
+    }
+    MusicModel *music = self.musicArray[self.index];
+    //播放音乐
+    [self musicPlayWithMusicUrl:music.musicUrl];
+    //更新播放列表页的音乐名
+    self.MusicNameChangeBlock(music.musicName);
+    //更新播放器页面的标题
+    self.navigationItem.title = music.musicName;
+    //更新歌词
+    [self.tableView reloadData];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     //设置视图标题
-    self.navigationItem.title = self.music.musicName;
+    self.navigationItem.title = [self.musicArray[self.index] musicName];
     
     //设置TableView代理
     self.tableView.dataSource = self;
@@ -84,18 +130,22 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     if (!self.isSame) {
-        //初始化音乐播放器
-        [AudioPlayer shareInstace].audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:self.music.musicUrl error:nil];
-        //音量
-        [AudioPlayer shareInstace].audioPlayer.volume = 1;
-        //循环播放次数(循环)
-        [AudioPlayer shareInstace].audioPlayer.numberOfLoops = -1;
-        //播放进度
-        [AudioPlayer shareInstace].audioPlayer.currentTime = 0;
-        //预播放
-        [[AudioPlayer shareInstace].audioPlayer prepareToPlay];
-        //播放
-        [[AudioPlayer shareInstace].audioPlayer play];
+        MusicModel *music = self.musicArray[self.index];
+        [self musicPlayWithMusicUrl:music.musicUrl];
+    }
+    
+    //判断当前的播放状态,设置按钮图片
+    if ([AudioPlayer shareInstace].audioPlayer.isPlaying) {
+        [self.playOrStopButton setBackgroundImage:[UIImage imageNamed:@"pause.png"] forState:(UIControlStateNormal)];
+    }else{
+        [self.playOrStopButton setBackgroundImage:[UIImage imageNamed:@"play.png"] forState:(UIControlStateNormal)];
+    }
+    
+    //判断当前播放曲目是第几首,决定按钮是否可点
+    if (self.index == 0) {
+        self.backButton.userInteractionEnabled = NO;
+    }else if(self.index == self.musicArray.count - 1){
+        self.nextButton.userInteractionEnabled = NO;
     }
     
     //添加计时器
@@ -104,6 +154,22 @@
     //给两个滚动条添加事件,当滚动时,对应改变播放进度与音量
     [self.volumeSlider addTarget:self action:@selector(volumeChanged) forControlEvents:(UIControlEventValueChanged)];
     [self.scheduleSlider addTarget:self action:@selector(scheduleChanged) forControlEvents:(UIControlEventValueChanged)];
+}
+
+//音乐播放
+- (void)musicPlayWithMusicUrl:(NSURL *)url{
+    //初始化音乐播放器
+    [AudioPlayer shareInstace].audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:url error:nil];
+    //音量
+    [AudioPlayer shareInstace].audioPlayer.volume = 1;
+    //循环播放次数(循环)
+    [AudioPlayer shareInstace].audioPlayer.numberOfLoops = -1;
+    //播放进度
+    [AudioPlayer shareInstace].audioPlayer.currentTime = 0;
+    //预播放
+    [[AudioPlayer shareInstace].audioPlayer prepareToPlay];
+    //播放
+    [[AudioPlayer shareInstace].audioPlayer play];
 }
 
 //音量改变
@@ -151,9 +217,9 @@
     //将时间转化为字符串,方便对比
     NSString *timeStr = [NSString stringWithFormat:@"%.2f",alreadyTime];
     //判断歌词时间列表是够存在这个时间
-    if ([self.music.lrcTimesArr containsObject:timeStr]) {
+    if ([[self.musicArray[self.index] lrcTimesArr] containsObject:timeStr]) {
         //获取时间对应的歌词行数
-        NSInteger row = [self.music.lrcTimesArr indexOfObject:timeStr];
+        NSInteger row = [[self.musicArray[self.index] lrcTimesArr] indexOfObject:timeStr];
         //滚动到当前行
         NSIndexPath *indexpath = [NSIndexPath indexPathForRow:row inSection:0];
         [self.tableView scrollToRowAtIndexPath:indexpath atScrollPosition:(UITableViewScrollPositionMiddle) animated:YES];
@@ -172,13 +238,14 @@
 
 //行数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.music.lrcTimesArr.count;
+    return [self.musicArray[self.index] lrcTimesArr].count;
 }
 
 //Cell的样式
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MusicLrcTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MusicLrcCell"];
-    cell.lrcLable.text = self.lrcDict[self.music.lrcTimesArr[indexPath.row]];
+    MusicModel *music = self.musicArray[self.index];
+    cell.lrcLable.text = self.lrcDict[music.lrcTimesArr[indexPath.row]];
     return cell;
 }
 

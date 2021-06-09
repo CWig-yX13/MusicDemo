@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <AVFoundation/AVFoundation.h>
+#import "AudioPlayer.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,21 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    //后台播放
+    
+    //修改Info配置文件
+    
+    
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    //激活
+    [session setActive:YES error:nil];
+    //注册分类
+    [session setCategory:AVAudioSessionCategoryPlayback error:nil];
+    
+    //让APP支持接受远程事件
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    
     return YES;
 }
 
