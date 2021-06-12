@@ -199,8 +199,8 @@
     NSInteger allTime = [AudioPlayer shareInstace].audioPlayer.duration;
     //当前时间
     NSInteger alreadyTime = [AudioPlayer shareInstace].audioPlayer.currentTime;
-    self.allTimeLable.text = [NSString stringWithFormat:@"%02ld:%02ld",allTime/60,allTime%60];
-    self.alreadyTimeLable.text = [NSString stringWithFormat:@"%02ld:%02ld",alreadyTime/60,alreadyTime%60];
+    self.allTimeLable.text = [NSString stringWithFormat:@"%02d:%02d",allTime/60,allTime%60];
+    self.alreadyTimeLable.text = [NSString stringWithFormat:@"%02d:%02d",alreadyTime/60,alreadyTime%60];
 }
 
 //随着播放,播放进度条的滚动
